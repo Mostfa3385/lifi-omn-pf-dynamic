@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the software release and the associated article."
+title: >-
+  Service-Gap-Aware OMN-PF Scheduling for Dynamic ADT-OFDMA Strict-FFR
+  LiFi Attocell Networks
+type: software
+authors:
+  - family-names: Mohamed
+    given-names: Mostafa
+repository-code: "https://github.com/Mostfa3385/lifi-omn-pf-dynamic"
+url: "https://github.com/Mostfa3385/lifi-omn-pf-dynamic"
+version: "1.0.0"
+date-released: "2026-07-06"
+license: MIT
+keywords:
+  - LiFi
+  - visible light communication
+  - proportional-fair scheduling
+  - mobility
+  - receiver orientation
+  - NLOS
+  - service continuity
+  - fractional frequency reuse
+  - optical attocell
+preferred-citation:
+  type: article
+  title: >-
+    Joint Angle-Diversity SDMA, OFDMA, and Strict FFR Framework for Dense
+    LiFi Attocell Networks
+  authors:
+    - family-names: Mohamed
+      given-names: Mostafa
+  journal: Scientific Reports
+  year: 2026
+
