@@ -1,0 +1,33 @@
+OMN-PF Final Overnight Run Report
+=================================
+
+This report is auto-generated from the final overnight raw CSV.
+The main paper claim should compare OMN-PF primarily against conventional PF,
+while reporting max-SINR as a high-throughput/high-continuity reference.
+
+[MAIN]
+- max_sinr             n=10 edgeC10=0.1150±0.0005 edgeC20=0.0482±0.0003 SE=164.60 fairness=0.0936
+- omn_pf               n=10 edgeC10=0.1137±0.0005 edgeC20=0.0497±0.0004 SE=159.25 fairness=0.0859
+- omn_pf_a             n=10 edgeC10=0.1156±0.0005 edgeC20=0.0611±0.0005 SE=159.18 fairness=0.0866
+- proportional_fair    n=10 edgeC10=0.0825±0.0005 edgeC20=0.0323±0.0003 SE=144.19 fairness=0.0855
+- rr1                  n=10 edgeC10=0.0376±0.0005 edgeC20=0.0171±0.0003 SE=78.65 fairness=0.0435
+
+[ABLATION]
+
+PF vs OMN-PF headline deltas
+---------------------------
+- edge_coverage_continuity_10db: PF=0.0824578, OMN-PF=0.113694, delta=+37.88%
+- edge_coverage_continuity_20db: PF=0.032282, OMN-PF=0.0496972, delta=+53.95%
+- fairness_over_time: PF=0.0855264, OMN-PF=0.0859205, delta=+0.46%
+- avg_rate_bpshz: PF=144.195, OMN-PF=159.246, delta=+10.44%
+
+OMN-PF vs OMN-PF-A multi-user adaptive OFDMA/power deltas
+-------------------------------------------
+- edge_coverage_continuity_10db: OMN-PF=0.113694, OMN-PF-A=0.115625, delta=+1.70%
+- edge_coverage_continuity_20db: OMN-PF=0.0496972, OMN-PF-A=0.0610928, delta=+22.93%
+- fairness_over_time: OMN-PF=0.0859205, OMN-PF-A=0.0865995, delta=+0.79%
+- avg_rate_bpshz: OMN-PF=159.246, OMN-PF-A=159.18, delta=-0.04%
+- mean_delta_used: OMN-PF=0.666667, OMN-PF-A=0.666667, delta=+0.00%
+- delta_switch_rate: OMN-PF=0, OMN-PF-A=0, delta=+nan%
+- adaptive_ofdma_enabled: OMN-PF=0, OMN-PF-A=1, delta=+nan%
+- adaptive_power_enabled: OMN-PF=0, OMN-PF-A=1, delta=+nan%

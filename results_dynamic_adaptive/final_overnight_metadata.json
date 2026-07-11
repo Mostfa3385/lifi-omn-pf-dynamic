@@ -1,0 +1,40 @@
+{
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "trials": 300,
+  "frames": 75,
+  "users_per_macro": 42,
+  "nlos_profile": "stress",
+  "mode": "main",
+  "workers": 4,
+  "main_schedulers": [
+    "rr1",
+    "max_sinr",
+    "proportional_fair",
+    "omn_pf",
+    "omn_pf_a"
+  ],
+  "ablation_schedulers": [
+    "proportional_fair",
+    "omn_no_outage",
+    "omn_no_edge",
+    "omn_no_transition",
+    "omn_no_nlos",
+    "omn_no_fairness",
+    "omn_no_gap",
+    "omn_pf"
+  ],
+  "total_pending_tasks": 50,
+  "raw_csv": "results_dynamic_adaptive\\final_overnight_raw.csv",
+  "summary_csv": "results_dynamic_adaptive\\final_overnight_summary_ci.csv"
+}

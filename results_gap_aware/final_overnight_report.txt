@@ -1,0 +1,29 @@
+OMN-PF Final Overnight Run Report
+=================================
+
+This report is auto-generated from the final overnight raw CSV.
+The main paper claim should compare OMN-PF primarily against conventional PF,
+while reporting max-SINR as a high-throughput/high-continuity reference.
+
+[MAIN]
+- max_sinr             n=10 edgeC10=0.0950±0.0005 edgeC20=0.0610±0.0004 SE=186.51 fairness=0.0640
+- omn_pf               n=10 edgeC10=0.0881±0.0005 edgeC20=0.0500±0.0004 SE=183.57 fairness=0.0606
+- proportional_fair    n=10 edgeC10=0.0648±0.0004 edgeC20=0.0305±0.0003 SE=176.14 fairness=0.0540
+- rr1                  n=10 edgeC10=0.0235±0.0002 edgeC20=0.0138±0.0002 SE=88.71 fairness=0.0272
+
+[ABLATION]
+- omn_no_edge          n=10 edgeC10=0.0693±0.0004 edgeC20=0.0311±0.0004 SE=191.99 fairness=0.0552
+- omn_no_fairness      n=10 edgeC10=0.0955±0.0005 edgeC20=0.0605±0.0004 SE=182.12 fairness=0.0635
+- omn_no_gap           n=10 edgeC10=0.0955±0.0005 edgeC20=0.0579±0.0004 SE=174.75 fairness=0.0634
+- omn_no_nlos          n=10 edgeC10=0.0897±0.0005 edgeC20=0.0518±0.0004 SE=181.91 fairness=0.0614
+- omn_no_outage        n=10 edgeC10=0.0893±0.0005 edgeC20=0.0509±0.0004 SE=182.26 fairness=0.0604
+- omn_no_transition    n=10 edgeC10=0.0880±0.0005 edgeC20=0.0499±0.0004 SE=183.70 fairness=0.0606
+- omn_pf               n=10 edgeC10=0.0881±0.0005 edgeC20=0.0500±0.0004 SE=183.57 fairness=0.0606
+- proportional_fair    n=10 edgeC10=0.0648±0.0004 edgeC20=0.0305±0.0003 SE=176.14 fairness=0.0540
+
+PF vs OMN-PF headline deltas
+---------------------------
+- edge_coverage_continuity_10db: PF=0.064792, OMN-PF=0.0880964, delta=+35.97%
+- edge_coverage_continuity_20db: PF=0.0305411, OMN-PF=0.0500013, delta=+63.72%
+- fairness_over_time: PF=0.0540345, OMN-PF=0.0606303, delta=+12.21%
+- avg_rate_bpshz: PF=176.139, OMN-PF=183.568, delta=+4.22%

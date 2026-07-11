@@ -1,0 +1,33 @@
+{
+  "title": "Service-Gap-Aware OMN-PF Scheduling for Dynamic ADT-OFDMA Strict-FFR LiFi Attocell Networks",
+  "description": "Reproducible Python simulator, experiment runner, multi-seed results, and figure generator for the mobility-, receiver-orientation-, NLOS-, beam-transition-, and service-gap-aware OMN-PF extension of the ADT-OFDMA strict-FFR LiFi attocell benchmark.",
+  "creators": [
+    {
+      "name": "Mohamed, Mostafa"
+    }
+  ],
+  "license": "mit",
+  "upload_type": "software",
+  "access_right": "open",
+  "keywords": [
+    "LiFi",
+    "visible light communication",
+    "optical attocell",
+    "OFDMA",
+    "strict FFR",
+    "mobility",
+    "receiver orientation",
+    "NLOS",
+    "proportional-fair scheduling",
+    "service continuity"
+  ],
+  "version": "1.0.0",
+  "language": "eng",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.19714290",
+      "relation": "isDerivedFrom",
+      "resource_type": "software"
+    }
+  ]
+}
