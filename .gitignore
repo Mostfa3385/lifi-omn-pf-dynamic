@@ -6,6 +6,10 @@ venv/
 .idea/
 .vscode/
 release_audit_smoke/
+results_multi_user_smoke/
+results_dynamic_multi_user/
 results_timing/
 *.log
+.DS_Store
+Thumbs.db
 

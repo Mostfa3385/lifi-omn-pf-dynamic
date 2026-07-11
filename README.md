@@ -1,7 +1,5 @@
 # Service-Gap-Aware OMN-PF for Dynamic LiFi Attocells
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21220269.svg)](https://doi.org/10.5281/zenodo.21220269)
-
 This repository contains the dynamic reliability-aware extension of the
 ADT-SDMA, OFDMA, and strict-FFR LiFi attocell benchmark. It adds:
 
@@ -26,6 +24,10 @@ The archived `v1.0.0` release of this dynamic repository is available at:
 
 - Dynamic OMN-PF Zenodo: https://doi.org/10.5281/zenodo.21220269
 
+The current repository state corresponds to release `v1.1.1`. A new Zenodo
+version DOI should be generated from the GitHub `v1.1.1` release before this
+specific updated code snapshot is cited as the version of record.
+
 ## Repository Contents
 
 ```text
@@ -36,11 +38,12 @@ The archived `v1.0.0` release of this dynamic repository is available at:
 |-- run_final_overnight_windows.bat # Full Windows run
 |-- run_final_overnight.sh          # Full Linux/macOS run
 |-- run_timing_test.sh              # Short runtime estimate
-|-- results_gap_aware/
+|-- results_variable_admission/
 |   |-- final_overnight_raw.csv
 |   |-- final_overnight_summary_ci.csv
 |   |-- final_overnight_report.txt
 |   `-- final_overnight_metadata.json
+|-- results_gap_aware/               # Earlier gap-aware full run
 |-- figures/                        # Generated PNG figures
 |-- requirements.txt
 |-- CITATION.cff
@@ -90,12 +93,12 @@ The reported dynamic experiment uses:
 - 75 frames per trial;
 - 42 users per macrocell;
 - the NLOS-stress profile;
-- four main schedulers and eight ablation configurations.
+- five main schedulers.
 
 Run:
 
 ```bash
-python run_overnight_final.py --output_dir results_gap_aware --seeds 1-10 --trials 300 --frames 75 --mode both --workers 4
+python run_overnight_final.py --output_dir results_variable_admission --seeds 1-10 --trials 300 --frames 75 --mode main --workers 4
 ```
 
 The runner is resumable. Repeating the command skips completed
@@ -104,35 +107,34 @@ The runner is resumable. Repeating the command skips completed
 Use fewer workers if memory or thermal limits are a concern:
 
 ```bash
-python run_overnight_final.py --output_dir results_gap_aware --seeds 1-10 --trials 300 --frames 75 --mode both --workers 2
+python run_overnight_final.py --output_dir results_variable_admission --seeds 1-10 --trials 300 --frames 75 --mode main --workers 2
 ```
 
 ## Regenerate Figures
 
 ```bash
-python generate_figures.py --summary results_gap_aware/final_overnight_summary_ci.csv --outdir figures
+python generate_figures.py --summary results_variable_admission/final_overnight_summary_ci.csv --outdir figures
 ```
 
 ## Main Result
 
-The following means are the archived single-user-per-region results from the
-previous dynamic model and correspond to the earlier manuscript Table 7. They
-must be regenerated before publication after enabling the common multi-user
-OFDMA model described below.
+The following means are the included `v1.1.1` variable-admission multi-user
+OFDMA results in `results_variable_admission/`.
 
 | Scheduler | Edge C10 | Edge C20 | Scheduled SE (bps/Hz) | Jain fairness | Average outage duration (frames) |
 |---|---:|---:|---:|---:|---:|
-| RR1 | 2.35% | 1.38% | 88.71 | 0.0272 | 42.68 |
-| PF | 6.48% | 3.05% | 176.14 | 0.0540 | 34.13 |
-| OMN-PF | 8.81% | 5.00% | 183.57 | 0.0606 | 32.70 |
+| RR1 | 3.76% | 1.71% | 78.65 | 0.0435 | 38.22 |
+| Max-SINR | 11.50% | 4.82% | 164.60 | 0.0936 | 41.26 |
+| PF | 8.25% | 3.23% | 144.19 | 0.0855 | 31.54 |
+| OMN-PF | 11.37% | 4.97% | 159.25 | 0.0859 | 32.67 |
+| OMN-PF-A | 11.56% | 6.11% | 159.18 | 0.0866 | 31.07 |
 
 Relative to conventional PF, service-gap-aware OMN-PF improves:
 
-- edge-user 10 dB continuity by approximately 36.0%;
-- edge-user 20 dB continuity by approximately 63.7%;
-- scheduled spectral efficiency by approximately 4.22%;
-- temporal Jain fairness by approximately 12.21%;
-- average outage duration from 34.13 to 32.70 frames.
+- edge-user 10 dB continuity by approximately 37.88%;
+- edge-user 20 dB continuity by approximately 53.95%;
+- scheduled spectral efficiency by approximately 10.44%;
+- temporal Jain fairness by approximately 0.46%.
 
 Max-SINR is retained as an opportunistic high-rate reference. The paper does
 not claim that OMN-PF universally dominates max-SINR.
@@ -250,4 +252,3 @@ Full main experiment:
 ```bash
 python run_overnight_final.py --output_dir results_dynamic_multi_user --seeds 1-10 --trials 300 --frames 75 --mode main --workers 4
 ```
-

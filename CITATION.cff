@@ -9,14 +9,9 @@ authors:
     given-names: Mostafa
 repository-code: "https://github.com/Mostfa3385/lifi-omn-pf-dynamic"
 url: "https://github.com/Mostfa3385/lifi-omn-pf-dynamic"
-version: "1.0.0"
-date-released: "2026-07-06"
+version: "1.1.1"
+date-released: "2026-07-11"
 license: MIT
-doi: "10.5281/zenodo.21220269"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.21220269"
-    description: Archived snapshot of the dynamic OMN-PF software release v1.0.0
 keywords:
   - LiFi
   - visible light communication
