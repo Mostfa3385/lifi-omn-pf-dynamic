@@ -11,7 +11,6 @@ repository-code: "https://github.com/Mostfa3385/lifi-omn-pf-dynamic"
 url: "https://github.com/Mostfa3385/lifi-omn-pf-dynamic"
 version: "1.1.1"
 date-released: "2026-07-11"
-license: MIT
 keywords:
   - LiFi
   - visible light communication
